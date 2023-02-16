@@ -98,6 +98,7 @@ class ContentReader {
       String contentMimeType) {
     switch (contentMimeType.toLowerCase()) {
       case 'application/xhtml+xml':
+      case 'text/html':
         return EpubContentType.XHTML_1_1;
       case 'application/x-dtbook+xml':
         return EpubContentType.DTBOOK;
