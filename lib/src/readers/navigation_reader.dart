@@ -255,10 +255,11 @@ class NavigationReader {
           break;
       }
     });
-    if (result.Source == null || result.Source!.isEmpty) {
-      throw Exception(
-          'Incorrect EPUB navigation content: content source is missing.');
-    }
+    // element with span, the content will be null;
+    // if (result.Source == null || result.Source!.isEmpty) {
+    //   throw Exception(
+    //       'Incorrect EPUB navigation content: content source is missing.');
+    // }
     return result;
   }
 
@@ -382,10 +383,10 @@ class NavigationReader {
           break;
       }
     });
-    if (result.NavigationLabels!.isEmpty) {
-      throw Exception(
-          'Incorrect EPUB navigation page target: at least one navLabel element is required.');
-    }
+    // if (result.NavigationLabels!.isEmpty) {
+    //   throw Exception(
+    //       'Incorrect EPUB navigation page target: at least one navLabel element is required.');
+    // }
     return result;
   }
 
@@ -557,6 +558,7 @@ class NavigationReader {
         .forEach((xml.XmlElement navigationPointChildNode) {
       switch (navigationPointChildNode.name.local.toLowerCase()) {
         case 'a':
+        case 'span':
           var navigationLabel = readNavigationLabelV3(navigationPointChildNode);
           result.NavigationLabels!.add(navigationLabel);
           var content = readNavigationContentV3(navigationPointChildNode);
