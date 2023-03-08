@@ -7,7 +7,7 @@ import 'package:test/test.dart';
 import 'package:epubx/epubx.dart';
 
 main() async {
-  String fileName = "Picking Up.epub";
+  String fileName = "stevenson-a-childs-garden-of-verses-illustrations.epub";
   String fullPath = path.join(io.Directory.current.path, "test", "res", fileName);
   var targetFile = new io.File(fullPath);
   if (!(await targetFile.exists())) {
