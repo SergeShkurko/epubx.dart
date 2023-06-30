@@ -8,7 +8,7 @@ import 'package:test/test.dart';
 import 'package:epubx/epubx.dart';
 
 main() async {
-  String fileName = "MY VAMPIRE SYSTEM (JKSManga) (Z-Library).epub";
+  String fileName = "alicesAdventuresUnderGround.epub";
   String fullPath =
       path.join(io.Directory.current.path, "test", "res", fileName);
   var targetFile = new io.File(fullPath);
@@ -21,9 +21,9 @@ main() async {
 
     expect(epubRef.CoverImage, isNotNull);
 
-    // expect(3, epubRef.CoverImage.format);
-    // expect(581, epubRef.CoverImage.width);
-    // expect(1034, epubRef.CoverImage.height);
+    expect(3, epubRef.CoverImage.format);
+    expect(581, epubRef.CoverImage.width);
+    expect(1034, epubRef.CoverImage.height);
   });
 
   test("Test Epub Ref Image", () async {
@@ -33,8 +33,8 @@ main() async {
 
     expect(coverImage, isNotNull);
 
-    // expect(3, coverImage.format);
-    // expect(581, coverImage.width);
-    // expect(1034, coverImage.height);
+    expect(3, coverImage.format);
+    expect(581, coverImage.width);
+    expect(1034, coverImage.height);
   });
 }

@@ -15,7 +15,6 @@ class ChapterReader {
   static List<EpubChapterRef> getChaptersImpl(
       EpubBookRef bookRef, List<EpubNavigationPoint> navigationPoints) {
     var result = <EpubChapterRef>[];
-    // navigationPoints.forEach((EpubNavigationPoint navigationPoint) {
     for (var navigationPoint in navigationPoints){
       String? contentFileName;
       String? anchor;
